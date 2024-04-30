@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import taxRatesData from './TaxRates.JSON';
+import taxRatesData from './TaxRates.json';
 
 export default function App() {
   const [show, setShow] = useState(false);
@@ -70,7 +70,6 @@ export default function App() {
     // Validate inputs using the trimmed values
     if (
       trimmedInputs.firstName === '' ||
-      trimmedInputs.jobTitle === '' ||
       isNaN(parseFloat(trimmedInputs.salary)) ||
       isNaN(parseFloat(trimmedInputs.workHours)) ||
       parseFloat(trimmedInputs.workHours) <= 0 ||
@@ -84,7 +83,6 @@ export default function App() {
     // Validate if fields are empty
     if (
       trimmedInputs.firstName === '' ||
-      trimmedInputs.jobTitle === '' ||
       trimmedInputs.salary === '' ||
       trimmedInputs.workHours === '' ||
       trimmedInputs.state === ''
@@ -186,7 +184,7 @@ export default function App() {
             <div className="justify-center mx-auto px-4">
               <h2 className='text-3xl mb-12 font-bold text-center'>How Much Are You Making?</h2>
               <div className="text-center my-4">
-                <button className='rounded-lg my-1 cursor-pointer' onClick={handleShow}>Calculate Earnings</button>
+                <button className='rounded-lg my-1 p-3 bg-black cursor-pointer' onClick={handleShow}>Calculate Earnings</button>
               </div>
               <div className={`${showData === false ? 'hidden' : 'block'}`}>
                 <div className='text-center my-8'>
@@ -198,15 +196,14 @@ export default function App() {
                 <div className="text-center my-4">
                   <div className='flex flex-row justify-center'>
                     <p className='inline-block md:mr-4'>Start Time: {startTime}</p>
-                    <button className="p-2 inline-block mr-1 md:mx-4 sm:p-6" onClick={toggleStop}>Stop</button>
-                    <button className="p-2 inline-block ml-1 md:mx-4 sm:p-6" onClick={toggleClear}>Clear</button>
+                    <button className="p-2 bg-black inline-block mr-1 md:mx-4 sm:p-6" onClick={toggleStop}>Stop</button>
+                    <button className="p-2 bg-black inline-block ml-1 md:mx-4 sm:p-6" onClick={toggleClear}>Clear</button>
                     <p className='inline-block md:ml-4'>End Time: {endTime}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-  </div>
+      </div>
   );
 }
